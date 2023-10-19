@@ -3512,6 +3512,19 @@ const victimList = [
 
 // sort randomly
 victimList.sort(() => Math.random() - 0.5);
+// sort by age
+// victimList.sort((a, b) => {
+//   if (a.age && b.age) {
+//     return a.age - b.age;
+//   } else if (a.age) {
+//     return -1;
+//   } else if (b.age) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// });
+
 
 const victimsDiv = document.getElementById("victims");
 victimList.forEach(victim => {
@@ -3521,7 +3534,14 @@ victimList.forEach(victim => {
   victimTextsDiv.className = "victim-texts";
 
   const nameAgeH3 = document.createElement("h3");
-  nameAgeH3.textContent = `${victim.name}${victim.age ? ` - ${victim.age}` : ""}`;
+  const candleImage = document.createElement("img");
+  candleImage.src = "./candle.jpeg";
+  candleImage.alt = "Candle image";
+
+  const nameSpan = document.createElement("span");
+  nameSpan.textContent = `${victim.name}${victim.age ? ` - ${victim.age}` : ""}`;
+  nameAgeH3.appendChild(candleImage);
+  nameAgeH3.appendChild(nameSpan);
   nameAgeH3.className = "name";
   victimTextsDiv.appendChild(nameAgeH3);
 
@@ -3545,28 +3565,28 @@ victimList.forEach(victim => {
   }
   victimDiv.appendChild(victimTextsDiv);
 
-  const sendButton = document.createElement("button");
+  const sendDiv = document.createElement("div");
   const img = document.createElement("img");
   img.src = "./whatsapp.svg";
   img.alt = "Whatsapp logo image";
 
   const span = document.createElement("span");
   span.textContent = "שליחה לקרעי";
-  sendButton.appendChild(img);
-  sendButton.appendChild(span);
-  sendButton.className = "send-button";
+  sendDiv.appendChild(img);
+  sendDiv.appendChild(span);
+  sendDiv.className = "send-div";
 
-  sendButton.addEventListener("click", () => {
+  victimDiv.appendChild(sendDiv);
+  victimDiv.addEventListener("click", () => {
     handleClick(victim);
   });
-  victimDiv.appendChild(sendButton);
   victimsDiv.appendChild(victimDiv);
 });
 
 
 function handleClick(victim) {
   // Phone number to send the message to (include the country code)
-  // const karhiPhone = "+972526163059";
+  const karhiPhone = "+972526163059";
 
   // Message content
   const statText = `אדוני שר התקשורת, קח אחריות על:`;
@@ -3583,9 +3603,9 @@ function handleClick(victim) {
   const encodedMessage = encodeURIComponent(message);
 
   // WhatsApp URL
-  // const whatsappUrl = `https://api.whatsapp.com/send?phone=${kariPhone}&text=${encodedMessage}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${karhiPhone}&text=${encodedMessage}`;
   // Testing
-  const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+  // const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
 
   // Open the WhatsApp link in a new tab
   window.open(whatsappUrl, "_blank");
