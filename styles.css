@@ -13,7 +13,6 @@ body {
   flex-direction: column;
   justify-content: center;
   row-gap: 70px;
-  /* height: 100vh; */
 }
 
 header {
@@ -63,20 +62,7 @@ header {
   text-align: center;
 
   @media screen and (max-width: 900px) {
-    font-size: 1.2rem;
-  }
-}
-
-.sub-title-1 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: hsl(0, 0%, 75%);
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  
-  @media screen and (max-width: 900px) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
