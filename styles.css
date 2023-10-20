@@ -108,10 +108,11 @@ blockquote figcaption, time {
   margin: 0;
   text-align: center;
   padding-block-start: 5px;
-  line-height: 200%;
-
+  line-height: 230%;
+  
   @media screen and (max-width: 900px) {
     font-size: 1.2rem;
+    line-height: 210%;
   }
 }
 
