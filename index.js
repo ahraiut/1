@@ -3533,22 +3533,22 @@ victimList.forEach(victim => {
   const victimTextsDiv = document.createElement("div");
   victimTextsDiv.className = "victim-texts";
 
-  const nameAgeH3 = document.createElement("h3");
+  const nameH3 = document.createElement("h3");
   const candleImage = document.createElement("img");
   candleImage.src = "./candle.jpeg";
   candleImage.alt = "Candle image";
 
   const nameSpan = document.createElement("span");
-  nameSpan.textContent = `${victim.name}${victim.age ? ` - ${victim.age}` : ""}`;
-  nameAgeH3.appendChild(candleImage);
-  nameAgeH3.appendChild(nameSpan);
-  nameAgeH3.className = "name";
-  victimTextsDiv.appendChild(nameAgeH3);
+  nameSpan.textContent = `${victim.name} ז״ל`;
+  nameH3.appendChild(candleImage);
+  nameH3.appendChild(nameSpan);
+  nameH3.className = "name";
+  victimTextsDiv.appendChild(nameH3);
 
-  const fromDiv = document.createElement("div");
-  fromDiv.textContent = victim.from;
-  fromDiv.className = "from";
-  victimTextsDiv.appendChild(fromDiv);
+  const ageFromDiv = document.createElement("div");
+  ageFromDiv.textContent = `${victim.age ? `גיל: ${victim.age}, ` : ""}${victim.from ? `${victim.from}` : ""}`;
+  ageFromDiv.className = "from";
+  victimTextsDiv.appendChild(ageFromDiv);
 
   if (victim.position) {
     const positionDiv = document.createElement("div");
@@ -3585,24 +3585,24 @@ victimList.forEach(victim => {
 
 
 function handleClick(victim) {
-   gtag('event', 'button_click', {
+  gtag('event', 'button_click', {
     'event_category': 'accountable2023',
     'event_label': 'send_to_karhi__button_click'
   });
-  
+
   // Phone number to send the message to (include the country code)
   const karhiPhone = "+972526163059";
 
   // Message content
   const statText = `אדוני שר התקשורת, קח אחריות על:`;
-  const age = victim.age ? ` - ${victim.age}` : "";
-  const from = victim.from ? `${victim.from}` : "";
+  const name = `\n*${victim.name}* ז״ל`;
+  const ageFrom = `${victim.age || victim.from ? `\n` : ""}${victim.age ? `גיל: ${victim.age}, ` : ""}${victim.from ? `${victim.from}` : ""}`
   const position = victim.position ? `\n${victim.position}` : "";
   const description = victim.description ? `\n${victim.description}` : "";
   const endText = `\n\nהתנצל על כישלון הממשלה להיערך ולמנוע את הטבח, ועל כישלון הממשלה לדאוג לניצולים מאז הטבח ועד היום.\nתתפטר!`;
 
   // Create a formatted message
-  const message = `${statText}\n*${victim.name}*${age}\n${from}${position}${description}${endText}`;
+  const message = `${statText}${name}${ageFrom}${position}${description}${endText}`;
 
   // Encode the message for a WhatsApp URL
   const encodedMessage = encodeURIComponent(message);
@@ -3615,6 +3615,7 @@ function handleClick(victim) {
   // Open the WhatsApp link in a new tab
   window.open(whatsappUrl, "_blank");
 }
+
 
 const link = document.querySelector('.call-to-action a');
 
