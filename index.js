@@ -3585,6 +3585,11 @@ victimList.forEach(victim => {
 
 
 function handleClick(victim) {
+   gtag('event', 'button_click', {
+    'event_category': 'accountable2023',
+    'event_label': 'send_to_karhi__button_click'
+  });
+  
   // Phone number to send the message to (include the country code)
   const karhiPhone = "+972526163059";
 
