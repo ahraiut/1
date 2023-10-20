@@ -96,10 +96,10 @@ blockquote figcaption, time {
 .call-to-action a {
   font-size: 1.6rem;
   font-weight: 700;
-  color: hsl(335deg, 100%, 49%);
+  color: hsl(335, 100%, 60%);
   cursor: pointer;
   text-decoration: none;
-  border-block-end: 4px solid hsl(335deg, 100%, 49%);
+  border-block-end: 4px solid hsl(335, 100%, 60%);
   padding: 0;
   margin: 0;
   text-align: center;
@@ -107,7 +107,7 @@ blockquote figcaption, time {
   line-height: 230%;
   
   @media screen and (max-width: 900px) {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 210%;
   }
 }
@@ -115,13 +115,13 @@ blockquote figcaption, time {
 .call-to-action a:hover, a:active {
   filter: brightness(1.2);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-block-end: 6px solid hsl(335deg, 100%, 49%);
+  border-block-end: 6px solid hsl(335, 100%, 60%);
 }
 
 .call-to-action a:visited {
   filter: none;
   box-shadow: none;
-  border-block-end: 2px solid hsl(335deg, 100%, 49%);
+  border-block-end: 4px solid hsl(335, 100%, 60%);
 }
 
 .line-break {
