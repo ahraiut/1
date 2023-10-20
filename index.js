@@ -3616,8 +3616,7 @@ function handleClick(victim) {
   window.open(whatsappUrl, "_blank");
 }
 
-
-const link = document.querySelector('.highlighted');
+const link = document.querySelector('.call-to-action a');
 
 link.addEventListener("click", (event) => {
   event.preventDefault();
