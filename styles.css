@@ -6,13 +6,18 @@ html {
 body {
   background-color: hsl(220, 26%, 14%);
   padding-block: 10px 80px;
+  margin: 0;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 70px;
+  row-gap: 30px;
+
+  @media screen and (max-width: 550px) {
+    row-gap: 10px;
+  }
 }
 
 header {
@@ -44,25 +49,13 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 20px;
+  row-gap: 30px;
   width: 750px;
-
+  
   @media screen and (max-width: 800px) {
+    row-gap: 15px;
     width: fit-content;
     padding-inline: 30px;
-  }
-}
-
-.sub-title-1 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: hsl(0, 0%, 75%);
-  margin: 0;
-  padding: 0;
-  text-align: center;
-
-  @media screen and (max-width: 900px) {
-    font-size: 1.1rem;
   }
 }
 
@@ -78,31 +71,44 @@ blockquote {
   color: hsl(0, 0%, 85%);
   padding: 0;
   margin: 0;
+  padding-block-end: 10px;
 
   @media screen and (max-width: 900px) {
     font-size: 1.4rem;
   }
 }
 
+blockquote figcaption, time {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(0, 0%, 70%);
+  padding: 0;
+  margin: 0;
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.8rem;
+  }
+}
+
 .call-to-action {
   text-align: center;
-  line-height: 10px;
   padding: 0;
   margin: 0;
 }
 
 .call-to-action a {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: hsl(335deg, 100%, 49%);
   cursor: pointer;
   text-decoration: none;
-  border-block-end: 2px solid hsl(335deg, 100%, 49%);
+  border-block-end: 4px solid hsl(335deg, 100%, 49%);
   padding: 0;
   margin: 0;
   text-align: center;
   padding-block-start: 5px;
-  line-height: 170%;
+  line-height: 200%;
 
   @media screen and (max-width: 900px) {
     font-size: 1.2rem;
@@ -129,17 +135,16 @@ blockquote {
   }
 }
 
-
-.sub-title-2 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: hsl(0, 0%, 75%);
+.cta-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(0, 0%, 55%);
   padding: 0;
   margin: 0;
   text-align: center;
 
   @media screen and (max-width: 900px) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -154,6 +159,7 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 250px);
   gap: 40px;
+  padding-block-start: 40px;
 
   @media screen and (max-width: 1550px) {
     grid-template-columns: repeat(4, 250px);
@@ -168,24 +174,37 @@ main {
   }
 
   @media screen and (max-width: 600px) {
-    grid-template-columns: repeat(1, 250px);
+    grid-template-columns: repeat(1, 1fr);
+    padding-inline: 60px;
+  }
+  
+  @media screen and (max-width: 49r0px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding-inline: 30px;
+  }
+  
+  @media screen and (max-width: 400px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding-inline: 20px;
   }
 }
 
 .victim {
-  background-color: hsl(223.33deg, 25%, 22%);
+  background-color: hsl(223.33deg, 25%, 17%);
   border-radius: 10px;
-  padding: 20px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   row-gap: 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 1.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+  border: 1px solid hsl(335deg 100% 49% / 40%);
 }
 
 .victim:hover {
   box-shadow: 0 0px 28px hsla(335deg, 100%, 49%, 0.3), 0 0px 10px hsla(335deg, 100%, 49%, 0.5);
+  border: 1px solid hsl(335deg 100% 49%);
   filter: brightness(1.2);
 }
 
@@ -198,7 +217,7 @@ main {
 }
 
 .name {
-  color: hsl(0, 0%, 80%);
+  color: hsl(0, 0%, 82%);
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -218,11 +237,11 @@ main {
 }
 
 .position {
-  color: hsl(0, 0%, 75%);
+  color: hsl(0, 0%, 82%);
 }
 
 .description {
-  color: hsl(0, 0%, 65%);
+  color: hsl(0, 0%, 72%);
 }
 
 .send-div {
@@ -234,10 +253,10 @@ main {
   align-items: center;
   justify-content: center;
   column-gap: 10px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   width: fit-content;
   border: none;
-  color: #f13986;
+  color: hsl(126.56deg 53.78% 53.33%);
 }
 
 .send-div img {
@@ -278,4 +297,3 @@ footer {
   margin: 0;
   padding: 0;
 }
-/**/
