@@ -41,7 +41,15 @@ header {
   text-align: center;
 
   @media screen and (max-width: 1150px) {
-    font-size: 15vw;
+    /* font-size: 15vw; */
+    font-size: 10vw;
+  }
+}
+
+.politician-name-title {
+  color: hsl(340, 100%, 42%);
+  @media screen and (max-width: 500px) {
+    font-size: 10vw;
   }
 }
 
@@ -51,7 +59,7 @@ header {
   justify-content: center;
   row-gap: 30px;
   width: 750px;
-  
+
   @media screen and (max-width: 800px) {
     row-gap: 45px;
     width: fit-content;
@@ -78,7 +86,8 @@ blockquote {
   }
 }
 
-blockquote figcaption, time {
+blockquote figcaption,
+time {
   text-align: center;
   font-size: 1rem;
   font-weight: 400;
@@ -87,54 +96,99 @@ blockquote figcaption, time {
   margin: 0;
 }
 
-.call-to-action {
+.actions {
   text-align: center;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 10px;
+  row-gap: 15px;
 }
 
-.call-to-action a {
+.send-message-cta {
   font-size: 1.3rem;
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  background-color: #d50047;
+  background-color: hsl(126, 53.78%, 35%);
   color: white;
   border: none;
   padding: 10px 20px;
   margin: 0;
   border-radius: 3px;
   letter-spacing: 0.05rem;
-  
+
   @media screen and (max-width: 900px) {
     font-size: 1.4rem;
   }
-  
+
   @media screen and (max-width: 500px) {
     font-size: 1.2rem;
   }
 }
 
-.call-to-action a:hover, a:active {
+.send-message-cta:hover,
+.send-message-cta:active {
   filter: brightness(1.1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.call-to-action a:visited, a:focus {
+.send-message-cta:visited,
+.send-message-cta:focus {
   filter: brightness(1);
   box-shadow: none;
 }
 
-.line-break {
+/* .line-break {
   display: block;
 
   @media screen and (max-width: 550px) {
     display: none;
   }
+} */
+
+#choose-politician {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background-color: hsl(340, 100%, 42%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 3px;
+  letter-spacing: 0.05rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 20px;
+}
+
+#choose-politician:hover,
+#choose-politician:active {
+  filter: brightness(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#choose-politician:visited,
+#choose-politician:focus {
+  filter: brightness(1);
+  box-shadow: none;
+}
+
+#choose-politician p {
+  padding: 0;
+  margin: 0;
+}
+
+.arrow {
+  font-size: 0.9rem;
+  padding-inline-start: 10px;
+  transform: scaleY(0.8);
 }
 
 .cta-description {
@@ -153,23 +207,13 @@ main {
   justify-content: center;
 }
 
-/* .victim-count {
-  font-size: 1rem;
-  font-weight: 400;
-  color: hsl(0, 0%, 65%);
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  margin-block-start: 3px;
-} */
-
 #victims {
   color: white;
   display: grid;
   grid-template-columns: repeat(5, 250px);
   gap: 40px;
   margin-block-start: 40px;
-  
+
   @media screen and (max-width: 1550px) {
     grid-template-columns: repeat(4, 250px);
   }
@@ -186,7 +230,7 @@ main {
     grid-template-columns: repeat(1, 1fr);
     padding-inline: 60px;
   }
-  
+
   @media screen and (max-width: 500px) {
     grid-template-columns: repeat(1, 1fr);
     padding-inline: 0px;
@@ -206,19 +250,20 @@ main {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 1.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
   border: 1px solid hsla(340, 100%, 42%, 40%);
-  
+
   @media screen and (max-width: 500px) {
     padding: 30px;
     border-radius: 0px;
     border: none;
     box-shadow: none;
-    border-block-end: 1px solid hsl(0, 0%, 100%, 0.1);
+    border-block-end: 1px solid hsl(0, 0%, 100%, 0.15);
     background-color: transparent;
   }
 }
 
 .victim:hover {
-  box-shadow: 0 0px 28px hsla(340, 100%, 42%, 0.3), 0 0px 10px hsla(340, 100%, 42%, 0.5);
+  box-shadow: 0 0px 28px hsla(340, 100%, 42%, 0.3),
+    0 0px 10px hsla(340, 100%, 42%, 0.5);
   border: 1px solid hsl(340, 100%, 42%);
   filter: brightness(1.2);
 
@@ -298,7 +343,7 @@ main {
   width: fit-content;
   border: none;
   color: hsl(126.56deg 53.78% 48%);
-  
+
   @media screen and (max-width: 500px) {
     margin-block-start: 5px;
     font-size: 1rem;
@@ -327,19 +372,106 @@ footer {
   padding-inline: 30px;
   text-align: center;
   align-items: flex-end;
-  
+
   @media screen and (max-width: 600px) {
     flex-direction: column;
     align-items: center;
     gap: 10px 0px;
-
   }
 }
 
-.email a{
+.email a {
   color: hsl(0, 0%, 75%);
   font-size: 0.8rem;
   font-weight: 600;
   margin: 0;
   padding: 0;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 600px;
+  background-color: hsl(220, 26%, 20%);
+  z-index: 9999;
+  box-shadow: -7px 0px 25px rgba(0, 0, 0, 0.8);
+  
+  @media screen and (max-width: 600px) {
+    padding: 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+  }
+}
+
+.popup-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px 5px 10px;
+  border-block-end: 1px solid hsla(0, 0%, 100%, 0.15);
+  height: 10%;
+  
+  @media screen and (max-width: 600px) {
+    /* padding: 10px 25px 10px 10px; */
+    height: 10vh;
+  }
+}
+
+.popup-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+.popup-close-button {
+  cursor: pointer;
+  padding: 20px;
+  border: none;
+  background-color: transparent;
+  color: hsla(0, 0%, 100%, 0.7);
+  display: inline-block;
+}
+
+.politician-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  overflow-y: scroll;
+  height: 90%;
+
+  @media screen and (max-width: 600px) {
+    height: 90vh;
+  }
+}
+
+.politician-item {
+  cursor: pointer;
+  border-block-end: 1px solid hsla(0, 0%, 100%, 0.15);
+  padding: 15px;
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.likud {
+  background-color: hsl(220, 26%, 20%);
+}
+
+.religious-zionism {
+  background-color: hsl(220, 26%, 17%);
+}
+
+.shas {
+  background-color: hsl(220, 26%, 20%);
+}
+
+.yahadut-hatorah {
+  background-color: hsl(220, 26%, 17%);
 }
