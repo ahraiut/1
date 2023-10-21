@@ -3512,6 +3512,7 @@ const victimList = [
 
 // sort randomly
 victimList.sort(() => Math.random() - 0.5);
+
 // sort by age
 // victimList.sort((a, b) => {
 //   if (a.age && b.age) {
@@ -3525,9 +3526,10 @@ victimList.sort(() => Math.random() - 0.5);
 //   }
 // });
 
-// const victimCount = document.querySelector('.victim-count');
-// victimCount.className = "victim-count";
-// victimCount.textContent = `${victimList.length()}`;
+// Phone number to send the message to (include the country code)
+let politicianPhone = "+972526163059";
+let startText = `אדוני שר התקשורת, קח אחריות על:`;
+let politicianGender = "male";
 
 const victimsDiv = document.getElementById("victims");
 victimList.forEach(victim => {
@@ -3574,7 +3576,7 @@ victimList.forEach(victim => {
   img.alt = "Whatsapp logo image";
 
   const span = document.createElement("span");
-  span.textContent = "שליחה לקרעי";
+  span.textContent = "שליחה לשר/ה";
   sendDiv.appendChild(img);
   sendDiv.appendChild(span);
   sendDiv.className = "send-div";
@@ -3593,25 +3595,21 @@ function handleClick(victim) {
     'event_label': 'send_to_karhi__button_click'
   });
 
-  // Phone number to send the message to (include the country code)
-  const karhiPhone = "+972526163059";
-
   // Message content
-  const statText = `אדוני שר התקשורת, קח אחריות על:`;
   const name = `\n*${victim.name}* ז״ל`;
   const ageFrom = `${victim.age || victim.from ? `\n` : ""}${victim.age ? `גיל: ${victim.age}` : ""}${victim.age && victim.from ? `, ` : ""}${victim.from ? `${victim.from}` : ""}`
   const position = victim.position ? `\n${victim.position}` : "";
   const description = victim.description ? `\n${victim.description}` : "";
-  const endText = `\n\nהתנצל על כישלון הממשלה להיערך ולמנוע את הטבח, ועל כישלון הממשלה לדאוג לניצולים מאז הטבח ועד היום.\nתתפטר!`;
+  const endText = `\n\n${politicianGender == "male" ? `התנצל ` : `התנצלי `}על כישלון הממשלה להיערך ולמנוע את הטבח, ועל כישלון הממשלה לדאוג לניצולים מאז הטבח ועד היום.`;
 
   // Create a formatted message
-  const message = `${statText}${name}${ageFrom}${position}${description}${endText}`;
+  const message = `${startText}${name}${ageFrom}${position}${description}${endText}`;
 
   // Encode the message for a WhatsApp URL
   const encodedMessage = encodeURIComponent(message);
 
   // WhatsApp URL
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${karhiPhone}&text=${encodedMessage}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${politicianPhone}&text=${encodedMessage}`;
   // Testing
   // const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
 
@@ -3619,8 +3617,218 @@ function handleClick(victim) {
   window.open(whatsappUrl, "_blank");
 }
 
+const choosePolitician = document.getElementById("choose-politician");
 
-const link = document.querySelector('.call-to-action a');
+choosePolitician.addEventListener("click", () => {
+  // Create popup element
+  const popup = document.createElement("div");
+  popup.className = "popup";
+
+  // Create header element
+  const header = document.createElement("header");
+  header.className = "popup-header";
+
+  // Create title element
+  const title = document.createElement("h2");
+  title.textContent = "בחירת שר/ה";
+
+  // Create close button element
+  const closeButton = document.createElement("button");
+  closeButton.className = "popup-close-button";
+  closeButton.textContent = "✕";
+  closeButton.addEventListener("click", () => {
+    document.body.removeChild(popup);
+  });
+
+  // Append title and close button to header
+  header.appendChild(title);
+  header.appendChild(closeButton);
+
+
+  // Politician list
+  const politicians = [
+    { fullName: 'שלמה קרעי', title: 'שר התקשורת', lastName: 'השר קרעי', party: 'ליכוד', phone: '+972526163059', startText: 'אדוני שר התקשורת, קח אחריות על:', gender: 'male' },
+    { fullName: 'יריב לוין', title: 'שר המשפטים', lastName: 'השר לוין', party: 'ליכוד', phone: '+972522769183', startText: 'אדוני שר המשפטים, קח אחריות על:', gender: 'male' },
+    { fullName: 'יואב גלנט', title: 'שר הבטחון', lastName: 'השר גלנט', party: 'ליכוד', phone: '+972546100100', startText: 'אדוני שר הבטחון, קח אחריות על:', gender: 'male' },
+    { fullName: 'אלי כהן', title: 'שר החוץ', lastName: 'השר כהן', party: 'ליכוד', phone: '+972507500600', startText: 'אדוני שר החוץ, קח אחריות על:', gender: 'male' },
+    { fullName: 'דוד אמסלם', title: 'השר המקשר לכנסת', lastName: 'השר אמסלם', party: 'ליכוד', phone: '+972537769651', startText: 'אדוני השר המקשר לכנסת, קח אחריות על:', gender: 'male' },
+    { fullName: 'אמיר אוחנה', title: 'יושב ראש הכנסת', lastName: 'יושב ראש הכנסת אוחנה', party: 'ליכוד', phone: '+972547484840', startText: 'אדוני יושב ראש הכנסת, קח אחריות על:', gender: 'male' },
+    { fullName: 'יואב קיש', title: 'שר החינוך', lastName: 'השר קיש', party: 'ליכוד', phone: '+972542523333', startText: 'אדוני שר החינוך, קח אחריות על:', gender: 'male' },
+    { fullName: 'ניר ברקת', title: 'שר הכלכלה', lastName: 'השר ברקת', party: 'ליכוד', phone: '+972506908888', startText: 'אדוני שר הכלכלה, קח אחריות על:', gender: 'male' },
+    { fullName: 'מירי רגב', title: 'שרת התחבורה', lastName: 'השרה רגב', party: 'ליכוד', phone: '+972506202600', startText: 'גברתי שרת התחבורה, קחי אחריות על:', gender: 'female' },
+    { fullName: 'מיקי זוהר', title: 'שר התרבות', lastName: 'השר זוהר', party: 'ליכוד', phone: '+972525858668', startText: 'אדוני שר התרבות, קח אחריות על:', gender: 'male' },
+    { fullName: 'אבי דיכטר', title: 'שר החקלאות', lastName: 'השר דיכטר', party: 'ליכוד', phone: '+972507558899', startText: 'אדוני שר החקלאות, קח אחריות על:', gender: 'male' },
+    { fullName: 'ישראל כץ', title: 'שר התשתיות', lastName: '	השר כץ', party: 'ליכוד', phone: '+972506233939', startText: 'אדוני שר התשתיות , קח אחריות על:', gender: 'male' },
+    { fullName: 'עמיחי שיקלי', title: 'שר התפוצות', lastName: 'השר שיקלי', party: 'ליכוד', phone: '+972526027800', startText: 'אדוני שר התפוצות, קח אחריות על:', gender: 'male' },
+    { fullName: 'עידית סילמן', title: 'השרה להגנת הסביבה', lastName: 'השרה סילמן', party: 'ליכוד', phone: '+972549987074', startText: 'גברתי השרה להגנת הסביבה, קחי אחריות על:', gender: 'female' },
+    { fullName: 'חיים כץ', title: 'שר התיירות', lastName: 'השר כץ', party: 'ליכוד', phone: '+972523274333', startText: 'אדוני שר התיירות, קח אחריות על:', gender: 'male' },
+    { fullName: 'גילה גמליאל', title: 'שרת המודיעין', lastName: 'השרה גמליאל', party: 'ליכוד', phone: '+972506200039', startText: 'גברתי שרת המודיעין, קחי אחריות על:', gender: 'female' },
+    { fullName: 'מאי גולן', title: 'השרה למעמד האשה', lastName: 'השרה גולן', party: 'ליכוד', phone: '+972544461414', startText: 'גברתי השרה למעמד האשה, קחי אחריות על:', gender: 'female' },
+    {
+      fullName: "בצלאל סמוטריץ'",
+      title: "שר האוצר",
+      lastName: "השר סמוטריץ'",
+      party: "הציונות הדתית",
+      phone: "+972528903771",
+      startText: "אדוני שר האוצר, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "איתמר בן גביר",
+      title: "השר לבטחון לאומי",
+      lastName: "השר בן גביר",
+      party: "הציונות הדתית",
+      phone: "+972528693867",
+      startText: "אדוני השר לבטחון לאומי, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "אורית סטרוק",
+      title: "שרה למשימות לאומיות",
+      lastName: "השרה סטרוק",
+      party: "הציונות הדתית",
+      phone: "+972524295558",
+      startText: "גברתי השרה למשימות לאומיות, קחי אחריות על:",
+      gender: "female"
+    },
+    {
+      fullName: "יצחק וסרלאוף",
+      title: "שר הנגב והגליל",
+      lastName: "השר וסרלאוף",
+      party: "הציונות הדתית",
+      phone: "+972545852404",
+      startText: "אדוני שר הנגב והגליל, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "עמיחי אליהו",
+      title: "שר המורשת",
+      lastName: "השר אליהו",
+      party: "הציונות הדתית",
+      phone: "+972527203113",
+      startText: "אדוני שר המורשת, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "אריה דרעי",
+      title: "יו״ר ש״ס",
+      lastName: "יו״ר ש״ס דרעי",
+      party: "שס",
+      phone: "+972545500500",
+      startText: "אדוני יו״ר ש״ס, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "יעקב מרגי",
+      title: "שר הרווחה",
+      lastName: "השר מרגי",
+      party: "שס",
+      phone: "+972504963737",
+      startText: "אדוני שר הרווחה, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "יואב בן צור",
+      title: "שר העבודה",
+      lastName: "השר בן צור",
+      party: "שס",
+      phone: "+972502222861",
+      startText: "אדוני שר העבודה, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "מיכאל מלכיאלי",
+      title: "השר לשירותי דת",
+      lastName: "השר מלכיאלי",
+      party: "שס",
+      phone: "+972542040502",
+      startText: "אדוני השר לשירותי דת, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "חיים ביטון",
+      title: "שר החינוך החרדי",
+      lastName: "השר ביטון",
+      party: "שס",
+      phone: "+972525990000",
+      startText: "אדוני שר החינוך החרדי, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "משה ארבל",
+      title: "שר הבריאות והפנים",
+      lastName: "השר ארבל",
+      party: "שס",
+      phone: "+972506496621",
+      startText: "אדוני שר הבריאות והפנים, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "יצחק גולדקנופף",
+      title: "שר השיכון",
+      lastName: "השר גולדקנופף",
+      party: "יהדות התורה",
+      phone: "+972527644550",
+      startText: "אדוני שר השיכון, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "משה גפני",
+      title: "יו״ר דגל התורה",
+      lastName: "יו״ר דגל התורה גפני",
+      party: "יהדות התורה",
+      phone: "+972504141411",
+      startText: "אדוני יו״ר דגל התורה, קח אחריות על:",
+      gender: "male"
+    },
+    {
+      fullName: "מאיר פרוש",
+      title: "שר ירושלים",
+      lastName: "השר פרוש",
+      party: "יהדות התורה",
+      phone: "+972505405300",
+      startText: "אדוני שר ירושלים, קח אחריות על:",
+      gender: "male"
+    }
+
+  ];
+
+
+  // Create list element
+  const politicianList = document.createElement("div");
+  politicianList.className = "politician-list";
+
+  // Create list items and add click event listeners
+  politicians.forEach(politician => {
+    const listItem = document.createElement("div");
+    const party = getParty(politician.party);
+    listItem.className = "politician-item" + party;
+
+    listItem.textContent = `${politician.fullName} - ${politician.title} - ${politician.party}`;
+    listItem.addEventListener("click", () => {
+      const politicianNameTitle = document.querySelector(".politician-name-title");
+      politicianNameTitle.textContent = politician.lastName;
+      politicianPhone = politician.phone;
+      startText = politician.startText;
+      politicianGender = politician.gender;
+      const takeResponsibilityTitle = document.getElementById("take-responsibility-title");
+      takeResponsibilityTitle.textContent = politician.gender == "male" ? "קח אחריות" : "קחי אחריות";
+
+      document.body.removeChild(popup);
+    });
+    politicianList.appendChild(listItem);
+  });
+
+  // Append header and list to popup
+  popup.appendChild(header);
+  popup.appendChild(politicianList);
+
+  // Append popup to body
+  document.body.appendChild(popup);
+});
+
+
+const link = document.querySelector('.send-message-cta');
 
 link.addEventListener("click", (event) => {
   event.preventDefault();
@@ -3628,3 +3836,52 @@ link.addEventListener("click", (event) => {
     behavior: "smooth"
   });
 });
+
+
+function getParty(partyHeb) {
+  switch (partyHeb) {
+    case "הליכוד":
+      return " likud";
+    case "הציונות הדתית":
+      return " religious-zionism";
+    case "שס":
+      return " shas";
+    case "יהדות התורה":
+      return " yahadut-hatorah";
+    default:
+      return "";
+  }
+}
+
+
+/*
+יצחק וסרלאוף
+גילה גמליאל
+מיכאל מלכיאלי
+אופיר אקוניס
+יריב לוין
+יואב גלנט
+אריה דרעי
+מירי רגב
+בצלאל סמוטריץ'
+חיים כץ
+השרים ניר ברקת
+אופיר סופר
+עידית סילמן
+אלי כהן
+איתמר בן גביר
+אורית סטרוק
+יואב קיש
+עמיחי אליהו
+גלית דיסטל-אטבריאן
+אבי דיכטר
+חיים ביטון
+ישראל כ"ץ
+רון דרמר
+יעקב מרגי
+יצחק גולדקנופף
+מיקי זוהר
+שלמה קרעי
+יואב בן צור 
+עמיחי שיקלי
+*/
