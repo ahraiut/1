@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  background-color: hsl(220, 26%, 14%);
-  padding-block: 10px 80px;
+  background-color: hsl(220, 26%, 13%);
+  padding-block: 25px 80px;
   margin: 0;
 }
 
@@ -53,7 +53,7 @@ header {
   width: 750px;
   
   @media screen and (max-width: 800px) {
-    row-gap: 15px;
+    row-gap: 45px;
     width: fit-content;
     padding-inline: 30px;
   }
@@ -90,38 +90,43 @@ blockquote figcaption, time {
 .call-to-action {
   text-align: center;
   padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
 }
 
 .call-to-action a {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: hsl(335, 100%, 60%);
   cursor: pointer;
   text-decoration: none;
-  border-block-end: 4px solid hsl(335, 100%, 60%);
-  padding: 0;
-  margin: 0;
   text-align: center;
-  padding-block-start: 5px;
-  line-height: 230%;
+  background-color: #d50047;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 3px;
+  letter-spacing: 0.05rem;
   
   @media screen and (max-width: 900px) {
     font-size: 1.4rem;
-    line-height: 210%;
+  }
+  
+  @media screen and (max-width: 500px) {
+    font-size: 1.2rem;
   }
 }
 
 .call-to-action a:hover, a:active {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-block-end: 6px solid hsl(335, 100%, 60%);
 }
 
-.call-to-action a:visited {
-  filter: none;
+.call-to-action a:visited, a:focus {
+  filter: brightness(1);
   box-shadow: none;
-  border-block-end: 4px solid hsl(335, 100%, 60%);
 }
 
 .line-break {
@@ -148,13 +153,23 @@ main {
   justify-content: center;
 }
 
+/* .victim-count {
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(0, 0%, 65%);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-block-start: 3px;
+} */
+
 #victims {
   color: white;
   display: grid;
   grid-template-columns: repeat(5, 250px);
   gap: 40px;
-  padding-block-start: 40px;
-
+  margin-block-start: 40px;
+  
   @media screen and (max-width: 1550px) {
     grid-template-columns: repeat(4, 250px);
   }
@@ -172,14 +187,11 @@ main {
     padding-inline: 60px;
   }
   
-  @media screen and (max-width: 49r0px) {
+  @media screen and (max-width: 500px) {
     grid-template-columns: repeat(1, 1fr);
-    padding-inline: 30px;
-  }
-  
-  @media screen and (max-width: 400px) {
-    grid-template-columns: repeat(1, 1fr);
-    padding-inline: 20px;
+    padding-inline: 0px;
+    gap: 0px;
+    border-block-start: 1px solid hsl(0, 0%, 100%, 0.1);
   }
 }
 
@@ -193,13 +205,29 @@ main {
   row-gap: 20px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 1.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
-  border: 1px solid hsl(335deg 100% 49% / 40%);
+  border: 1px solid hsla(340, 100%, 42%, 40%);
+  
+  @media screen and (max-width: 500px) {
+    padding: 30px;
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    border-block-end: 1px solid hsl(0, 0%, 100%, 0.1);
+    background-color: transparent;
+  }
 }
 
 .victim:hover {
-  box-shadow: 0 0px 28px hsla(335deg, 100%, 49%, 0.3), 0 0px 10px hsla(335deg, 100%, 49%, 0.5);
-  border: 1px solid hsl(335deg 100% 49%);
+  box-shadow: 0 0px 28px hsla(340, 100%, 42%, 0.3), 0 0px 10px hsla(340, 100%, 42%, 0.5);
+  border: 1px solid hsl(340, 100%, 42%);
   filter: brightness(1.2);
+
+  @media screen and (max-width: 500px) {
+    box-shadow: none;
+    border: none;
+    border-block-end: 1px solid hsl(0, 0%, 100%, 0.1);
+    filter: brightness(1);
+  }
 }
 
 .victim-texts {
@@ -211,10 +239,15 @@ main {
 }
 
 .name {
-  color: hsl(0, 0%, 82%);
+  color: hsla(0, 0%, 100%, 0.8);
   font-weight: 700;
+  font-size: 1.1rem;
   margin: 0;
   padding: 0;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.2rem;
+  }
 }
 
 .name img {
@@ -225,17 +258,31 @@ main {
 }
 
 .from {
-  color: hsl(0, 0%, 65%);
+  color: hsla(0, 0%, 100%, 0.5);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 }
 
 .position {
-  color: hsl(0, 0%, 82%);
+  color: hsla(0, 0%, 100%, 0.65);
+  font-size: 0.9rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.1rem;
+  }
 }
 
 .description {
-  color: hsl(0, 0%, 72%);
+  color: hsla(0, 0%, 100%, 0.65);
+  font-size: 0.9rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.1rem;
+  }
 }
 
 .send-div {
@@ -250,7 +297,12 @@ main {
   font-size: 0.9rem;
   width: fit-content;
   border: none;
-  color: hsl(126.56deg 53.78% 53.33%);
+  color: hsl(126.56deg 53.78% 48%);
+  
+  @media screen and (max-width: 500px) {
+    margin-block-start: 5px;
+    font-size: 1rem;
+  }
 }
 
 .send-div img {
