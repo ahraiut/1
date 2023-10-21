@@ -2,10 +2,15 @@
 <html lang="en">
   <head>
     <!-- Google Analytics ------------------------------->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TG40LWRGW9"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TG40LWRGW9"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
       gtag('config', 'G-TG40LWRGW9');
     </script>
@@ -88,27 +93,40 @@
   <body>
     <div class="container">
       <header>
-        <h1 class="page-title">השר קרעי<br />קח אחריות</h1>
+        <h1 class="page-title">
+          <span id="take-responsibility-title">קח אחריות</span><br />
+          <span class="politician-name-title">השר קרעי</span>
+        </h1>
         <div class="sub-titles">
           <blockquote>
             <p class="quote">
               “אני שומע שאומרים ‘תתנצלו, תקחו אחריות, תבקשו סליחה’. על מה?“
             </p>
             <figcaption>
-              <span>השר שלמה קרעי</span><br>
+              <span>השר שלמה קרעי</span><br />
               <time datetime="2023-10-17">17 לאוקטובר, 2023</time>
             </figcaption>
           </blockquote>
 
-          <div class="call-to-action">
-            <a href="#victims">שלחו וואטסאפ לקרעי</a>
-            <h5 class="cta-description">שתפו איתו את סיפורי ההרוגים</h5>
+          <div class="actions">
+            <button
+              id="choose-politician"
+              type="button"
+            >
+              <p>1 - ביחרו שר/ה</p>
+              <p class="arrow">▼</p>
+            </button>
+            <a
+              class="send-message-cta"
+              href="#victims"
+              >2 - שלחו להם וואטסאפ</a
+            >
+            <p class="cta-description">הודעה מוכנה עם סיפורי ההרוגים</p>
           </div>
         </div>
       </header>
-      
+
       <main>
-        <!-- <p class="victim-count">הרוגי הטווח</p> -->
         <div id="victims"></div>
       </main>
       <footer>
