@@ -3525,6 +3525,9 @@ victimList.sort(() => Math.random() - 0.5);
 //   }
 // });
 
+// const victimCount = document.querySelector('.victim-count');
+// victimCount.className = "victim-count";
+// victimCount.textContent = `${victimList.length()}`;
 
 const victimsDiv = document.getElementById("victims");
 victimList.forEach(victim => {
@@ -3546,7 +3549,7 @@ victimList.forEach(victim => {
   victimTextsDiv.appendChild(nameH3);
 
   const ageFromDiv = document.createElement("div");
-  ageFromDiv.textContent = `${victim.age ? `גיל: ${victim.age}, ` : ""}${victim.from ? `${victim.from}` : ""}`;
+  ageFromDiv.textContent = `${victim.age ? `גיל: ${victim.age}` : ""}${victim.age && victim.from ? `, ` : ""}${victim.from ? `${victim.from}` : ""}`;
   ageFromDiv.className = "from";
   victimTextsDiv.appendChild(ageFromDiv);
 
@@ -3596,7 +3599,7 @@ function handleClick(victim) {
   // Message content
   const statText = `אדוני שר התקשורת, קח אחריות על:`;
   const name = `\n*${victim.name}* ז״ל`;
-  const ageFrom = `${victim.age || victim.from ? `\n` : ""}${victim.age ? `גיל: ${victim.age}, ` : ""}${victim.from ? `${victim.from}` : ""}`
+  const ageFrom = `${victim.age || victim.from ? `\n` : ""}${victim.age ? `גיל: ${victim.age}` : ""}${victim.age && victim.from ? `, ` : ""}${victim.from ? `${victim.from}` : ""}`
   const position = victim.position ? `\n${victim.position}` : "";
   const description = victim.description ? `\n${victim.description}` : "";
   const endText = `\n\nהתנצל על כישלון הממשלה להיערך ולמנוע את הטבח, ועל כישלון הממשלה לדאוג לניצולים מאז הטבח ועד היום.\nתתפטר!`;
