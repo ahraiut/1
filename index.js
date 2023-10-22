@@ -669,7 +669,7 @@ const victimList = [
   {
     name: "רב״ט קאמיי אחיאל",
     from: "ראש העין",
-    description: "לוחמת סנפיר בפלגה 914, נהרגה כתוצאה מתקלה באמצעי לחימה בפעילות מבצעית\n        במרחב הימי ליד גבול לבנון",
+    description: "לוחמת סנפיר בפלגה 914, נהרגה כתוצאה מתקלה באמצעי לחימה בפעילות מבצעית במרחב הימי ליד גבול לבנון",
     age: 18
   },
   {
@@ -711,7 +711,7 @@ const victimList = [
   {
     name: "סרן (במיל') יעקב נדלין",
     from: "אור עקיבא",
-    description: "לוחם בגדוד 7037 בחטיבת שומרון, נהרג מירי כוחותינו בפעילות ליד הכפר\n        אימתין",
+    description: "לוחם בגדוד 7037 בחטיבת שומרון, נהרג מירי כוחותינו בפעילות ליד הכפר אימתין",
     age: 36
   },
   {
@@ -1099,7 +1099,7 @@ const victimList = [
   {
     name: "רס״ל (מיל׳) איתי שלמה מורנו",
     from: "אדרת",
-    description: "איש שירות הביטחון הכללי, נפל בעת שירות מילואים ביחידת מגלן בקרב עם\n        מחבלים",
+    description: "איש שירות הביטחון הכללי, נפל בעת שירות מילואים ביחידת מגלן בקרב עם מחבלים",
     age: 24
   },
   {
@@ -3814,7 +3814,7 @@ choosePolitician.addEventListener("click", () => {
       takeResponsibilityTitle.textContent = politician.gender == "male" ? "קח אחריות" : "קחי אחריות";
 
       const selectedPolitician = document.getElementById("selected-politician");
-      selectedPolitician.textContent = politician.lastName;
+      selectedPolitician.textContent = `${politician.fullName} - ${politician.title}`;
       selectedPolitician.style.display = "block";
 
       document.body.removeChild(popup);
