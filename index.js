@@ -3528,7 +3528,7 @@ victimList.sort(() => Math.random() - 0.5);
 
 // Phone number to send the message to (include the country code)
 let politicianPhone = "+972526163059";
-let startText = `אדוני שר התקשורת, קח אחריות על:`;
+let startText = `אדוני שר התקשורת, קח אחריות על מות:`;
 let politicianGender = "male";
 
 const victimsDiv = document.getElementById("victims");
@@ -3647,30 +3647,30 @@ choosePolitician.addEventListener("click", () => {
 
   // Politician list
   const politicians = [
-    { fullName: 'שלמה קרעי', title: 'שר התקשורת', lastName: 'השר קרעי', party: 'ליכוד', phone: '+972526163059', startText: 'אדוני שר התקשורת, קח אחריות על:', gender: 'male' },
-    { fullName: 'יריב לוין', title: 'שר המשפטים', lastName: 'השר לוין', party: 'ליכוד', phone: '+972522769183', startText: 'אדוני שר המשפטים, קח אחריות על:', gender: 'male' },
-    { fullName: 'יואב גלנט', title: 'שר הבטחון', lastName: 'השר גלנט', party: 'ליכוד', phone: '+972546100100', startText: 'אדוני שר הבטחון, קח אחריות על:', gender: 'male' },
-    { fullName: 'אלי כהן', title: 'שר החוץ', lastName: 'השר כהן', party: 'ליכוד', phone: '+972507500600', startText: 'אדוני שר החוץ, קח אחריות על:', gender: 'male' },
-    { fullName: 'דוד אמסלם', title: 'השר המקשר לכנסת', lastName: 'השר אמסלם', party: 'ליכוד', phone: '+972537769651', startText: 'אדוני השר המקשר לכנסת, קח אחריות על:', gender: 'male' },
-    { fullName: 'אמיר אוחנה', title: 'יושב ראש הכנסת', lastName: 'יושב ראש הכנסת אוחנה', party: 'ליכוד', phone: '+972547484840', startText: 'אדוני יושב ראש הכנסת, קח אחריות על:', gender: 'male' },
-    { fullName: 'יואב קיש', title: 'שר החינוך', lastName: 'השר קיש', party: 'ליכוד', phone: '+972542523333', startText: 'אדוני שר החינוך, קח אחריות על:', gender: 'male' },
-    { fullName: 'ניר ברקת', title: 'שר הכלכלה', lastName: 'השר ברקת', party: 'ליכוד', phone: '+972506908888', startText: 'אדוני שר הכלכלה, קח אחריות על:', gender: 'male' },
-    { fullName: 'מירי רגב', title: 'שרת התחבורה', lastName: 'השרה רגב', party: 'ליכוד', phone: '+972506202600', startText: 'גברתי שרת התחבורה, קחי אחריות על:', gender: 'female' },
-    { fullName: 'מיקי זוהר', title: 'שר התרבות', lastName: 'השר זוהר', party: 'ליכוד', phone: '+972525858668', startText: 'אדוני שר התרבות, קח אחריות על:', gender: 'male' },
-    { fullName: 'אבי דיכטר', title: 'שר החקלאות', lastName: 'השר דיכטר', party: 'ליכוד', phone: '+972507558899', startText: 'אדוני שר החקלאות, קח אחריות על:', gender: 'male' },
-    { fullName: 'ישראל כץ', title: 'שר התשתיות', lastName: '	השר כץ', party: 'ליכוד', phone: '+972506233939', startText: 'אדוני שר התשתיות , קח אחריות על:', gender: 'male' },
-    { fullName: 'עמיחי שיקלי', title: 'שר התפוצות', lastName: 'השר שיקלי', party: 'ליכוד', phone: '+972526027800', startText: 'אדוני שר התפוצות, קח אחריות על:', gender: 'male' },
-    { fullName: 'עידית סילמן', title: 'השרה להגנת הסביבה', lastName: 'השרה סילמן', party: 'ליכוד', phone: '+972549987074', startText: 'גברתי השרה להגנת הסביבה, קחי אחריות על:', gender: 'female' },
-    { fullName: 'חיים כץ', title: 'שר התיירות', lastName: 'השר כץ', party: 'ליכוד', phone: '+972523274333', startText: 'אדוני שר התיירות, קח אחריות על:', gender: 'male' },
-    { fullName: 'גילה גמליאל', title: 'שרת המודיעין', lastName: 'השרה גמליאל', party: 'ליכוד', phone: '+972506200039', startText: 'גברתי שרת המודיעין, קחי אחריות על:', gender: 'female' },
-    { fullName: 'מאי גולן', title: 'השרה למעמד האשה', lastName: 'השרה גולן', party: 'ליכוד', phone: '+972544461414', startText: 'גברתי השרה למעמד האשה, קחי אחריות על:', gender: 'female' },
+    { fullName: 'שלמה קרעי', title: 'שר התקשורת', lastName: 'השר קרעי', party: 'ליכוד', phone: '+972526163059', startText: 'אדוני שר התקשורת, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'יריב לוין', title: 'שר המשפטים', lastName: 'השר לוין', party: 'ליכוד', phone: '+972522769183', startText: 'אדוני שר המשפטים, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'יואב גלנט', title: 'שר הבטחון', lastName: 'השר גלנט', party: 'ליכוד', phone: '+972546100100', startText: 'אדוני שר הבטחון, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'אלי כהן', title: 'שר החוץ', lastName: 'השר כהן', party: 'ליכוד', phone: '+972507500600', startText: 'אדוני שר החוץ, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'דוד אמסלם', title: 'השר המקשר לכנסת', lastName: 'השר אמסלם', party: 'ליכוד', phone: '+972537769651', startText: 'אדוני השר המקשר לכנסת, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'אמיר אוחנה', title: 'יושב ראש הכנסת', lastName: 'יושב ראש הכנסת אוחנה', party: 'ליכוד', phone: '+972547484840', startText: 'אדוני יושב ראש הכנסת, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'יואב קיש', title: 'שר החינוך', lastName: 'השר קיש', party: 'ליכוד', phone: '+972542523333', startText: 'אדוני שר החינוך, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'ניר ברקת', title: 'שר הכלכלה', lastName: 'השר ברקת', party: 'ליכוד', phone: '+972506908888', startText: 'אדוני שר הכלכלה, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'מירי רגב', title: 'שרת התחבורה', lastName: 'השרה רגב', party: 'ליכוד', phone: '+972506202600', startText: 'גברתי שרת התחבורה, קחי אחריות על מות:', gender: 'female' },
+    { fullName: 'מיקי זוהר', title: 'שר התרבות', lastName: 'השר זוהר', party: 'ליכוד', phone: '+972525858668', startText: 'אדוני שר התרבות, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'אבי דיכטר', title: 'שר החקלאות', lastName: 'השר דיכטר', party: 'ליכוד', phone: '+972507558899', startText: 'אדוני שר החקלאות, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'ישראל כץ', title: 'שר התשתיות', lastName: '	השר כץ', party: 'ליכוד', phone: '+972506233939', startText: 'אדוני שר התשתיות , קח אחריות על מות:', gender: 'male' },
+    { fullName: 'עמיחי שיקלי', title: 'שר התפוצות', lastName: 'השר שיקלי', party: 'ליכוד', phone: '+972526027800', startText: 'אדוני שר התפוצות, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'עידית סילמן', title: 'השרה להגנת הסביבה', lastName: 'השרה סילמן', party: 'ליכוד', phone: '+972549987074', startText: 'גברתי השרה להגנת הסביבה, קחי אחריות על מות:', gender: 'female' },
+    { fullName: 'חיים כץ', title: 'שר התיירות', lastName: 'השר כץ', party: 'ליכוד', phone: '+972523274333', startText: 'אדוני שר התיירות, קח אחריות על מות:', gender: 'male' },
+    { fullName: 'גילה גמליאל', title: 'שרת המודיעין', lastName: 'השרה גמליאל', party: 'ליכוד', phone: '+972506200039', startText: 'גברתי שרת המודיעין, קחי אחריות על מות:', gender: 'female' },
+    { fullName: 'מאי גולן', title: 'השרה למעמד האשה', lastName: 'השרה גולן', party: 'ליכוד', phone: '+972544461414', startText: 'גברתי השרה למעמד האשה, קחי אחריות על מות:', gender: 'female' },
     {
       fullName: "בצלאל סמוטריץ'",
       title: "שר האוצר",
       lastName: "השר סמוטריץ'",
       party: "הציונות הדתית",
       phone: "+972528903771",
-      startText: "אדוני שר האוצר, קח אחריות על:",
+      startText: "אדוני שר האוצר, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3679,7 +3679,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר בן גביר",
       party: "הציונות הדתית",
       phone: "+972528693867",
-      startText: "אדוני השר לבטחון לאומי, קח אחריות על:",
+      startText: "אדוני השר לבטחון לאומי, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3688,7 +3688,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השרה סטרוק",
       party: "הציונות הדתית",
       phone: "+972524295558",
-      startText: "גברתי השרה למשימות לאומיות, קחי אחריות על:",
+      startText: "גברתי השרה למשימות לאומיות, קחי אחריות על מות:",
       gender: "female"
     },
     {
@@ -3697,7 +3697,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר וסרלאוף",
       party: "הציונות הדתית",
       phone: "+972545852404",
-      startText: "אדוני שר הנגב והגליל, קח אחריות על:",
+      startText: "אדוני שר הנגב והגליל, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3706,7 +3706,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר אליהו",
       party: "הציונות הדתית",
       phone: "+972527203113",
-      startText: "אדוני שר המורשת, קח אחריות על:",
+      startText: "אדוני שר המורשת, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3715,7 +3715,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "יו״ר ש״ס דרעי",
       party: "שס",
       phone: "+972545500500",
-      startText: "אדוני יו״ר ש״ס, קח אחריות על:",
+      startText: "אדוני יו״ר ש״ס, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3724,7 +3724,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר מרגי",
       party: "שס",
       phone: "+972504963737",
-      startText: "אדוני שר הרווחה, קח אחריות על:",
+      startText: "אדוני שר הרווחה, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3733,7 +3733,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר בן צור",
       party: "שס",
       phone: "+972502222861",
-      startText: "אדוני שר העבודה, קח אחריות על:",
+      startText: "אדוני שר העבודה, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3742,7 +3742,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר מלכיאלי",
       party: "שס",
       phone: "+972542040502",
-      startText: "אדוני השר לשירותי דת, קח אחריות על:",
+      startText: "אדוני השר לשירותי דת, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3751,7 +3751,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר ביטון",
       party: "שס",
       phone: "+972525990000",
-      startText: "אדוני שר החינוך החרדי, קח אחריות על:",
+      startText: "אדוני שר החינוך החרדי, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3760,7 +3760,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר ארבל",
       party: "שס",
       phone: "+972506496621",
-      startText: "אדוני שר הבריאות והפנים, קח אחריות על:",
+      startText: "אדוני שר הבריאות והפנים, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3769,7 +3769,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר גולדקנופף",
       party: "יהדות התורה",
       phone: "+972527644550",
-      startText: "אדוני שר השיכון, קח אחריות על:",
+      startText: "אדוני שר השיכון, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3778,7 +3778,7 @@ choosePolitician.addEventListener("click", () => {
       lastName: "יו״ר דגל התורה גפני",
       party: "יהדות התורה",
       phone: "+972504141411",
-      startText: "אדוני יו״ר דגל התורה, קח אחריות על:",
+      startText: "אדוני יו״ר דגל התורה, קח אחריות על מות:",
       gender: "male"
     },
     {
@@ -3787,10 +3787,9 @@ choosePolitician.addEventListener("click", () => {
       lastName: "השר פרוש",
       party: "יהדות התורה",
       phone: "+972505405300",
-      startText: "אדוני שר ירושלים, קח אחריות על:",
+      startText: "אדוני שר ירושלים, קח אחריות על מות:",
       gender: "male"
     }
-
   ];
 
 
@@ -3813,6 +3812,10 @@ choosePolitician.addEventListener("click", () => {
       politicianGender = politician.gender;
       const takeResponsibilityTitle = document.getElementById("take-responsibility-title");
       takeResponsibilityTitle.textContent = politician.gender == "male" ? "קח אחריות" : "קחי אחריות";
+
+      const selectedPolitician = document.getElementById("selected-politician");
+      selectedPolitician.textContent = politician.lastName;
+      selectedPolitician.style.display = "block";
 
       document.body.removeChild(popup);
     });
