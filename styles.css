@@ -35,7 +35,7 @@ header {
 .page-title {
   font-size: 120px;
   font-weight: 800;
-  color: white;
+  color: hsl(0, 0%, 94%);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -47,7 +47,7 @@ header {
 }
 
 .politician-name-title {
-  color: hsl(340, 100%, 52%);
+  color: hsl(340, 100%, 45%);
   @media screen and (max-width: 500px) {
     font-size: 10vw;
   }
