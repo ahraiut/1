@@ -47,7 +47,7 @@ header {
 }
 
 .politician-name-title {
-  color: hsl(340, 100%, 42%);
+  color: hsl(340, 100%, 52%);
   @media screen and (max-width: 500px) {
     font-size: 10vw;
   }
@@ -191,7 +191,17 @@ time {
   transform: scaleY(0.8);
 }
 
-.cta-description {
+#selected-politician {
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(0, 0%, 65%);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: none;
+}
+
+#cta-description {
   font-size: 1rem;
   font-weight: 400;
   color: hsl(0, 0%, 65%);
