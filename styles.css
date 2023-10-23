@@ -140,13 +140,13 @@ time {
   box-shadow: none;
 }
 
-/* .line-break {
+.line-break {
   display: block;
 
   @media screen and (max-width: 550px) {
     display: none;
   }
-} */
+}
 
 #choose-politician {
   font-size: 1.3rem;
